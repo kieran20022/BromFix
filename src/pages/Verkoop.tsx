@@ -1,58 +1,21 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import {
-  ShoppingBag,
-  ArrowRight,
-  CheckCircle,
-  ArrowLeftRight,
-  Truck,
-  ShieldCheck,
-} from 'lucide-react'
+import { ArrowRight, Check } from 'lucide-react'
 
 const scooterExamples = [
   {
-    image: 'https://images.pexels.com/photos/1192330/pexels-photo-1192330.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.unsplash.com/photo-1571188654248-7a89013e986a?w=600&q=80',
     title: 'Kymco Agility',
     year: '2021',
-    price: 'Verkocht',
-    sold: true,
   },
   {
-    image: 'https://images.pexels.com/photos/3061638/pexels-photo-3061638.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.unsplash.com/photo-1600240644455-3edc55c375fe?w=600&q=80',
     title: 'SYM Orbit II',
     year: '2020',
-    price: 'Verkocht',
-    sold: true,
   },
   {
-    image: 'https://images.pexels.com/photos/240222/pexels-photo-240222.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80',
     title: 'AGM VX50',
     year: '2022',
-    price: 'Verkocht',
-    sold: true,
-  },
-]
-
-const benefits = [
-  {
-    icon: ShieldCheck,
-    title: 'Volledig Nagekeken',
-    desc: 'Elke scooter wordt grondig gecontroleerd en waar nodig gerepareerd in onze werkplaats.',
-  },
-  {
-    icon: CheckCircle,
-    title: 'Eerlijke Prijs',
-    desc: 'Kwalitatieve gebruikte scooters voor een redelijke en transparante prijs.',
-  },
-  {
-    icon: ArrowLeftRight,
-    title: 'Inkoop & Ruil',
-    desc: 'Wij kopen jouw oude scooter in of ruilen hem voor een andere. Ook defecte scooters.',
-  },
-  {
-    icon: Truck,
-    title: 'Ophaalservice',
-    desc: 'Scooter doet het niet meer? Wij kunnen hem bij je komen ophalen.',
   },
 ]
 
@@ -60,150 +23,108 @@ export default function Verkoop() {
   return (
     <>
       {/* Header */}
-      <section className="bg-gray-50 dark:bg-gray-900 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/40 rounded-xl flex items-center justify-center">
-                <ShoppingBag className="w-5 h-5 text-primary-600 dark:text-primary-400" />
-              </div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white">
-                Verkoop
-              </h1>
-            </div>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
-              BromFix verkoopt regelmatig gebruikte scooters die eerst grondig zijn nagekeken in onze werkplaats. Op zoek naar een betrouwbare tweedehands scooter? Of wil je jouw scooter verkopen?
-            </p>
-          </motion.div>
+      <section className="bg-gray-50 dark:bg-gray-900 py-10 border-b border-gray-200 dark:border-gray-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+            Verkoop
+          </h1>
+          <p className="text-gray-500 dark:text-gray-400 max-w-xl">
+            BromFix verkoopt regelmatig gebruikte scooters die grondig zijn nagekeken. Op zoek naar een betrouwbare tweedehands scooter? Of wil je jouw scooter verkopen?
+          </p>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-16 bg-white dark:bg-gray-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit, i) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="text-center p-6"
-              >
-                <div className="w-14 h-14 bg-primary-50 dark:bg-primary-950/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <benefit.icon className="w-7 h-7 text-primary-600 dark:text-primary-400" />
-                </div>
-                <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">{benefit.title}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.desc}</p>
-              </motion.div>
+      {/* What we offer */}
+      <section className="py-10 bg-white dark:bg-gray-950">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { title: 'Volledig Nagekeken', desc: 'Elke scooter wordt grondig gecontroleerd en waar nodig gerepareerd.' },
+              { title: 'Eerlijke Prijs', desc: 'Kwalitatieve scooters voor een redelijke en transparante prijs.' },
+              { title: 'Inkoop & Ruil', desc: 'Wij kopen jouw oude scooter in of ruilen hem. Ook defecte scooters.' },
+              { title: 'Ophaalservice', desc: 'Scooter doet het niet meer? Wij kunnen hem bij je komen ophalen.' },
+            ].map((item) => (
+              <div key={item.title} className="p-4">
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">{item.title}</h3>
+                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{item.desc}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Buy section */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-10"
-          >
-            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-4">
-              Eerder Verkocht
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl">
-              Hieronder een selectie van eerder door ons verkochte scooters. Neem contact op om te informeren naar het huidige aanbod.
-            </p>
-          </motion.div>
+      {/* Previously sold */}
+      <section className="py-10 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Eerder Verkocht</h2>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+            Een selectie van eerder verkochte scooters. Neem contact op voor het huidige aanbod.
+          </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {scooterExamples.map((scooter, i) => (
-              <motion.div
+          <div className="grid sm:grid-cols-3 gap-4">
+            {scooterExamples.map((scooter) => (
+              <div
                 key={scooter.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="rounded-2xl overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 group"
+                className="rounded-lg overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
               >
-                <div className="relative overflow-hidden aspect-[4/3]">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={scooter.image}
                     alt={scooter.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover"
                   />
-                  {scooter.sold && (
-                    <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                      Verkocht
-                    </div>
-                  )}
+                  <div className="absolute top-2 right-2 bg-gray-900/80 text-white text-xs font-medium px-2 py-0.5 rounded">
+                    Verkocht
+                  </div>
                 </div>
-                <div className="p-5">
-                  <h3 className="font-bold text-gray-900 dark:text-white">{scooter.title}</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Bouwjaar {scooter.year}</p>
-                  <p className="text-lg font-bold text-primary-600 dark:text-primary-400 mt-2">{scooter.price}</p>
+                <div className="p-4">
+                  <h3 className="font-medium text-gray-900 dark:text-white text-sm">{scooter.title}</h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Bouwjaar {scooter.year}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Sell section */}
-      <section className="py-16 bg-white dark:bg-gray-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-6">
+      {/* Sell/Trade section */}
+      <section className="py-10 bg-white dark:bg-gray-950">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-5 gap-10 items-start">
+            <div className="lg:col-span-3">
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                 Scooter verkopen of inruilen?
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                Wil je je scooter verkopen? Of ruilen voor een ander exemplaar? Neem dan contact met ons op. Wij kopen ook defecte scooters in. Als je scooter het niet meer doet en je wilt hem verkopen, kunnen wij hem ophalen.
+              <p className="text-gray-600 dark:text-gray-400 mb-5 leading-relaxed text-sm">
+                Wil je je scooter verkopen? Of ruilen voor een ander exemplaar? Neem contact met ons op. Wij kopen ook defecte scooters in. Als je scooter het niet meer doet en je wilt hem verkopen, kunnen wij hem ophalen.
               </p>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 mb-6">
                 {[
                   'Eerlijke inkoopprijs',
                   'Inruilen voor een andere scooter mogelijk',
                   'Ook defecte scooters',
                   'Ophaalservice beschikbaar',
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0" />
+                  <li key={item} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                    <Check className="w-4 h-4 text-green-600 dark:text-green-500 shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
+                className="inline-flex items-center gap-2 bg-gray-900 dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-100 text-white dark:text-gray-900 px-5 py-2.5 rounded font-medium text-sm transition-colors"
               >
-                Neem Contact Op
-                <ArrowRight className="w-4 h-4" />
+                Neem Contact Op <ArrowRight className="w-4 h-4" />
               </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
+            </div>
+            <div className="lg:col-span-2">
               <img
-                src="https://images.pexels.com/photos/159192/pexels-photo-159192.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Scooter te koop"
-                className="rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
+                src="https://images.unsplash.com/photo-1600240644455-3edc55c375fe?w=800&q=80"
+                alt="Scooter"
+                className="rounded-lg w-full object-cover aspect-[4/5]"
               />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

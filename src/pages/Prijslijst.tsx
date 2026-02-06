@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { ArrowRight, Info } from 'lucide-react'
 
 const priceCategories = [
@@ -70,83 +69,66 @@ export default function Prijslijst() {
   return (
     <>
       {/* Header */}
-      <section className="bg-gray-50 dark:bg-gray-900 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
-              Prijslijst
-            </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
-              Hieronder vind je een indicatie van onze prijzen. De exacte prijs is afhankelijk van het type scooter en de benodigde onderdelen. Vraag vrijblijvend een prijsopgave aan.
-            </p>
-          </motion.div>
+      <section className="bg-gray-50 dark:bg-gray-900 py-10 border-b border-gray-200 dark:border-gray-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+            Prijslijst
+          </h1>
+          <p className="text-gray-500 dark:text-gray-400 max-w-xl">
+            Indicatie van onze prijzen. De exacte prijs hangt af van het type scooter en benodigde onderdelen.
+          </p>
         </div>
       </section>
 
       {/* Note */}
-      <section className="bg-white dark:bg-gray-950 pt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-start gap-3 bg-primary-50 dark:bg-primary-950/30 border border-primary-200 dark:border-primary-800 rounded-xl p-5">
-            <Info className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 shrink-0" />
-            <div>
-              <p className="text-sm text-primary-800 dark:text-primary-300 font-medium">Prijzen zijn indicatief</p>
-              <p className="text-sm text-primary-700 dark:text-primary-400 mt-1">
-                Alle genoemde prijzen zijn inclusief arbeidsloon, tenzij anders vermeld. Onderdelen worden apart berekend. Neem contact op voor een exacte prijsopgave voor jouw scooter.
-              </p>
-            </div>
+      <section className="bg-white dark:bg-gray-950 pt-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="flex items-start gap-3 bg-primary-50 dark:bg-primary-950/20 border border-primary-200 dark:border-primary-800/50 rounded px-4 py-3">
+            <Info className="w-4 h-4 text-primary-600 dark:text-primary-400 mt-0.5 shrink-0" />
+            <p className="text-sm text-primary-800 dark:text-primary-300">
+              Alle prijzen zijn inclusief arbeidsloon, tenzij anders vermeld. Onderdelen worden apart berekend. Neem contact op voor een exacte prijsopgave.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Price tables */}
-      <section className="py-16 bg-white dark:bg-gray-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            {priceCategories.map((cat, i) => (
-              <motion.div
+      <section className="py-10 bg-white dark:bg-gray-950">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-5">
+            {priceCategories.map((cat) => (
+              <div
                 key={cat.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden"
+                className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden"
               >
-                <div className="bg-gray-50 dark:bg-gray-900 px-6 py-4 border-b border-gray-200 dark:border-gray-800">
-                  <h3 className="font-bold text-gray-900 dark:text-white">{cat.title}</h3>
+                <div className="bg-gray-50 dark:bg-gray-900 px-5 py-3 border-b border-gray-200 dark:border-gray-800">
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white">{cat.title}</h3>
                 </div>
-                <div className="divide-y divide-gray-100 dark:divide-gray-800">
+                <div className="divide-y divide-gray-100 dark:divide-gray-800/60">
                   {cat.items.map((item) => (
                     <div
                       key={item.service}
-                      className="flex items-center justify-between px-6 py-3.5 hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors"
+                      className="flex items-center justify-between px-5 py-2.5"
                     >
-                      <span className="text-sm text-gray-700 dark:text-gray-300">{item.service}</span>
-                      <span className="text-sm font-semibold text-gray-900 dark:text-white whitespace-nowrap ml-4">
+                      <span className="text-sm text-gray-600 dark:text-gray-400">{item.service}</span>
+                      <span className="text-sm font-medium text-gray-900 dark:text-white whitespace-nowrap ml-4">
                         {item.price}
                       </span>
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Haal & Breng */}
-      <section className="py-8 bg-white dark:bg-gray-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
-            <div className="bg-gray-50 dark:bg-gray-900 px-6 py-4 border-b border-gray-200 dark:border-gray-800">
-              <h3 className="font-bold text-gray-900 dark:text-white">Haal & Breng Service</h3>
+          {/* Haal & Breng */}
+          <div className="mt-5 border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden">
+            <div className="bg-gray-50 dark:bg-gray-900 px-5 py-3 border-b border-gray-200 dark:border-gray-800">
+              <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Haal &amp; Breng Service</h3>
             </div>
-            <div className="px-6 py-4">
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                Kosten voor het ophalen en terugbrengen van je scooter zijn afhankelijk van de afstand. Neem contact op voor een prijsindicatie.
+            <div className="px-5 py-3">
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Kosten voor het ophalen en terugbrengen zijn afhankelijk van de afstand. Neem contact op voor een prijsindicatie.
               </p>
             </div>
           </div>
@@ -154,20 +136,19 @@ export default function Prijslijst() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white mb-4">
-            Vrijblijvend een prijsopgave?
+      <section className="py-10 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+            Exacte prijs nodig?
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
-            Wil je precies weten wat de reparatie van jouw scooter of brommer kost? Neem contact met ons op voor een vrijblijvende offerte.
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+            Neem contact met ons op voor een vrijblijvende offerte voor jouw scooter.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
+            className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded font-medium text-sm transition-colors"
           >
-            Vraag Offerte Aan
-            <ArrowRight className="w-4 h-4" />
+            Vraag Offerte Aan <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>

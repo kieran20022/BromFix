@@ -1,19 +1,19 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
-import Layout from './components/Layout'
-import Home from './pages/Home'
-import Diensten from './pages/Diensten'
-import Prijslijst from './pages/Prijslijst'
-import Verkoop from './pages/Verkoop'
-import OverOns from './pages/OverOns'
-import Contact from './pages/Contact'
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import Diensten from "./pages/Diensten";
+import Prijslijst from "./pages/Prijslijst";
+import Verkoop from "./pages/Verkoop";
+import OverOns from "./pages/OverOns";
+import Contact from "./pages/Contact";
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
-  return null
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
 }
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
         </Route>
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

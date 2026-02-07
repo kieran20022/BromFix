@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   Wrench,
   Settings,
@@ -8,19 +8,45 @@ import {
   ArrowRight,
   MapPin,
   Phone,
-} from 'lucide-react'
+} from "lucide-react";
+import workshop from "../assets/images/workshop.png";
 
 const services = [
-  { icon: Wrench, title: 'Reparatie', desc: 'Alle merken scooters en brommers. Van lekke banden tot motorblok vervanging.' },
-  { icon: Settings, title: 'Onderhoud', desc: 'Grote en kleine onderhoudsbeurten om je scooter in topconditie te houden.' },
-  { icon: Truck, title: 'Haal & Breng', desc: 'Pech onderweg? Wij halen je scooter op en brengen hem gerepareerd terug.' },
-  { icon: ShieldCheck, title: 'APK & Keuring', desc: 'Controle en keuring voor veilig rijden op de openbare weg.' },
-]
+  {
+    icon: Wrench,
+    title: "Reparatie",
+    desc: "Alle merken scooters en brommers. Van lekke banden tot motorblok vervanging.",
+  },
+  {
+    icon: Settings,
+    title: "Onderhoud",
+    desc: "Grote en kleine onderhoudsbeurten om je scooter in topconditie te houden.",
+  },
+  {
+    icon: Truck,
+    title: "Haal & Breng",
+    desc: "Pech onderweg? Wij halen je scooter op en brengen hem gerepareerd terug.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "APK & Keuring",
+    desc: "Controle en keuring voor veilig rijden op de openbare weg.",
+  },
+];
 
 const brands = [
-  'Kymco', 'SYM', 'AGM', 'BTC', 'Peugeot', 'La Souris',
-  'Berini', 'Boatian', 'Znen', 'Santini', 'Turbho',
-]
+  "Kymco",
+  "SYM",
+  "AGM",
+  "BTC",
+  "Peugeot",
+  "La Souris",
+  "Berini",
+  "Boatian",
+  "Znen",
+  "Santini",
+  "Turbho",
+];
 
 export default function Home() {
   return (
@@ -29,11 +55,11 @@ export default function Home() {
       <section className="relative bg-gray-950 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&q=80"
+            src={workshop}
             alt=""
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover opacity-40 blur-xs"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-gray-950/30" />
+          <div className="absolute inset-0 bg-linear-to-t dark:from-gray-950 dark:via-gray-950/40 dark:to-gray-950/20" />
         </div>
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-20 sm:pt-24 sm:pb-28">
@@ -47,7 +73,8 @@ export default function Home() {
               Scooter reparatie &amp; onderhoud
             </h1>
             <p className="text-gray-300 text-base sm:text-lg mb-8 leading-relaxed">
-              BromFix repareert, onderhoudt en verkoopt scooters en brommers in Berkel en Rodenrijs en Terneuzen. Snel, deskundig en betaalbaar.
+              BromFix repareert, onderhoudt en verkoopt scooters en brommers in
+              Berkel en Rodenrijs en Terneuzen. Snel, deskundig en betaalbaar.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -83,9 +110,12 @@ export default function Home() {
       {/* Services */}
       <section className="py-14 bg-white dark:bg-gray-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Wat wij doen</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+            Wat wij doen
+          </h2>
           <p className="text-gray-500 dark:text-gray-400 mb-8 max-w-lg text-sm">
-            Van eenvoudige reparaties tot complete revisies. Specialist in Chinese 4-takt scooters.
+            Van eenvoudige reparaties tot complete revisies. Specialist in
+            Chinese 4-takt scooters.
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -95,8 +125,12 @@ export default function Home() {
                 className="p-5 border border-gray-150 dark:border-gray-800 rounded-lg hover:border-primary-300 dark:hover:border-primary-700 transition-colors group"
               >
                 <s.icon className="w-5 h-5 text-primary-600 dark:text-primary-500 mb-3" />
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">{s.title}</h3>
-                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{s.desc}</p>
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                  {s.title}
+                </h3>
+                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                  {s.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -126,7 +160,10 @@ export default function Home() {
                 Haal &amp; Breng Service
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">
-                Scooter met pech onderweg blijven staan? Geen probleem. Wij halen je scooter op, repareren hem in onze werkplaats en brengen hem weer terug. Beschikbaar in de regio Berkel en Rodenrijs en Zeeuws-Vlaanderen.
+                Scooter met pech onderweg blijven staan? Geen probleem. Wij
+                halen je scooter op, repareren hem in onze werkplaats en brengen
+                hem weer terug. Beschikbaar in de regio Berkel en Rodenrijs en
+                Zeeuws-Vlaanderen.
               </p>
               <ul className="space-y-2 mb-6 text-sm text-gray-700 dark:text-gray-300">
                 <li className="flex items-baseline gap-2">
@@ -156,7 +193,9 @@ export default function Home() {
       {/* Brands */}
       <section className="py-10 bg-white dark:bg-gray-950 border-y border-gray-100 dark:border-gray-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <p className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-wider font-medium mb-4">Merken die wij repareren</p>
+          <p className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-wider font-medium mb-4">
+            Merken die wij repareren
+          </p>
           <div className="flex flex-wrap gap-2">
             {brands.map((brand) => (
               <span
@@ -173,28 +212,45 @@ export default function Home() {
       {/* Locations */}
       <section className="py-14 bg-white dark:bg-gray-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Onze locaties</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            Onze locaties
+          </h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="p-6 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-lg">
               <div className="flex items-center gap-2 mb-3">
                 <MapPin className="w-4 h-4 text-primary-600 dark:text-primary-500" />
-                <h3 className="font-semibold text-gray-900 dark:text-white">Berkel en Rodenrijs</h3>
+                <h3 className="font-semibold text-gray-900 dark:text-white">
+                  Berkel en Rodenrijs
+                </h3>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Industrieweg 124a</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Gemeente Lansingerland</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                Industrieweg 124a
+              </p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                Gemeente Lansingerland
+              </p>
               <p className="text-xs text-gray-500 dark:text-gray-500">
-                Vlakbij station Randstadrail Rodenrijs. Bereikbaar vanuit Bergschenhoek, Bleiswijk, Pijnacker, Nootdorp, Rotterdam, Zoetermeer, Den Haag en Delft.
+                Vlakbij station Randstadrail Rodenrijs. Bereikbaar vanuit
+                Bergschenhoek, Bleiswijk, Pijnacker, Nootdorp, Rotterdam,
+                Zoetermeer, Den Haag en Delft.
               </p>
             </div>
             <div className="p-6 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-lg">
               <div className="flex items-center gap-2 mb-3">
                 <MapPin className="w-4 h-4 text-primary-600 dark:text-primary-500" />
-                <h3 className="font-semibold text-gray-900 dark:text-white">Terneuzen</h3>
+                <h3 className="font-semibold text-gray-900 dark:text-white">
+                  Terneuzen
+                </h3>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Bij Auto Tinus</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Hughersluys 9, 4536 HM Terneuzen</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                Bij Auto Tinus
+              </p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                Hughersluys 9, 4536 HM Terneuzen
+              </p>
               <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">
-                Regelmatig aanwezig in Zeeuws-Vlaanderen. Neem contact op voor beschikbaarheid.
+                Regelmatig aanwezig in Zeeuws-Vlaanderen. Neem contact op voor
+                beschikbaarheid.
               </p>
             </div>
           </div>
@@ -202,11 +258,16 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 bg-gray-900 dark:bg-gray-900">
+      <section className="py-12 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h2 className="text-xl font-bold text-white mb-1">Scooter kapot?</h2>
-            <p className="text-gray-400 text-sm">Vraag vrijblijvend een prijsopgave aan. Snel en deskundig geholpen.</p>
+            <h2 className="text-xl font-bold dark:text-white mb-1">
+              Scooter kapot?
+            </h2>
+            <p className="text-gray-400 text-sm">
+              Vraag vrijblijvend een prijsopgave aan. Snel en deskundig
+              geholpen.
+            </p>
           </div>
           <div className="flex gap-3">
             <Link
@@ -225,5 +286,5 @@ export default function Home() {
         </div>
       </section>
     </>
-  )
+  );
 }
